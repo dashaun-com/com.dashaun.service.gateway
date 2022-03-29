@@ -1,0 +1,21 @@
+name: Native-ARM64
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+
+    runs-on: arm64
+
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@v2
+        with:
+          submodules: true
+      #Build Image
+      - name: Build Image
+        run: ./mvnw -Pnative-arm64 spring-boot:build-image -DskipTests

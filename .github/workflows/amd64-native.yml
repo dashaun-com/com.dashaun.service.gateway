@@ -1,0 +1,25 @@
+name: Native-AMD64
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+
+    runs-on: ubuntu-18.04
+
+    steps:
+      - uses: actions/setup-java@v2
+        with:
+          distribution: 'liberica' # See 'Supported distributions' for available options
+          java-version: '17'
+      - name: Checkout master
+        uses: actions/checkout@v2
+        with:
+          submodules: true
+      #Build Image
+      - name: Build Image
+        run: ./mvnw -Pnative-amd64 spring-boot:build-image -DskipTests
