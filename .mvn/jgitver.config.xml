@@ -7,7 +7,6 @@
     <useCommitDistance>false</useCommitDistance>
     <useDirty>false</useDirty>
     <useGitCommitId>false</useGitCommitId>
-    <useSnapshot>false</useSnapshot> <!-- use -SNAPSHOT in CONFIGURABLE strategy -->
     <gitCommitIdLength>8</gitCommitIdLength>  <!-- between [8,40] -->
     <nonQualifierBranches>main</nonQualifierBranches> <!-- comma separated, example "master,integration" -->
     <useDefaultBranchingPolicy>true</useDefaultBranchingPolicy>   <!-- uses jgitver#BranchingPolicy#DEFAULT_FALLBACK as fallback branch policy-->
