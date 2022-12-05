@@ -86,4 +86,22 @@
       </plugin>
     </plugins>
   </build>
+  <profiles>
+    <profile>
+      <id>dashaun</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <configuration>
+              <image>
+                <builder>dashaun/java-native-builder-multiarch:7.37.0</builder>
+              </image>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>
