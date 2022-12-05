@@ -2,7 +2,6 @@ package dev.dashaun.service.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.gateway.filter.ratelimit.RedisRateLimiter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
@@ -32,11 +31,6 @@ class GatewayController {
 
 @Configuration
 class GatewayConfig {
-
-	@Bean
-	RedisRateLimiter redisRateLimiter() {
-		return new RedisRateLimiter(1, 2);
-	}
 
 	@Bean
 	SecurityWebFilterChain springWebFilterChain(ServerHttpSecurity http) throws Exception {
