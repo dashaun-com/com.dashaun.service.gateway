@@ -43,7 +43,7 @@
     </dependency>
     <dependency>
       <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-starter-circuitbreaker-resilience4j</artifactId>
+      <artifactId>spring-cloud-starter-circuitbreaker-reactor-resilience4j</artifactId>
     </dependency>
     <dependency>
       <groupId>org.springframework.cloud</groupId>
@@ -96,7 +96,8 @@
             <artifactId>spring-boot-maven-plugin</artifactId>
             <configuration>
               <image>
-                <builder>dashaun/java-native-builder-multiarch:7.37.0</builder>
+                <builder>dashaun/java-native-builder-arm64:7.41.0</builder>
+                <name>dashaun/${project.groupId}.${project.artifactId}:${project.version}</name>
               </image>
             </configuration>
           </plugin>
