@@ -1,0 +1,10 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: spring-cloud-gateway
+  namespace: default
+spec:
+  template:
+    spec:
+      containers:
+        - image: dashaun/dev.dashaun.service.gateway:latest
