@@ -4,7 +4,7 @@
 [![Issues][issues-shield]][issues-url]
 [![License][license-shield]][license-url]
 
-# Spring Cloud Gateway + GraalVM example
+# Spring Cloud Gateway and GraalVM native image example
 
 - [Spring Boot Gateway](https://spring.io/projects/spring-cloud-gateway)
 - [Spring Cloud 2022.0.0-RC2](https://spring.io/projects/spring-cloud)
