@@ -30,7 +30,7 @@ public class BuildImageTest {
             // Run Gradle task and override the image name
             GradleRunner.create()
                     .withProjectDir(cwd)
-                    .withArguments( "-x","test","-q", "bootBuildImage", "--imageName", imageName, "--builder", "dashaun/java-native-builder-multiarch:7.41.0")
+                    .withArguments( "-x","test","-q", "bootBuildImage", "--imageName", imageName)
                     .forwardOutput()
                     .build();
 
