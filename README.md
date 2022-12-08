@@ -11,7 +11,7 @@
 - [Spring Boot 3.0.0](https://spring.io/projects/spring-boot)
 - [Testcontainers](https://testcontainers.org)
 
-## | [Prerequisites](#prerequisites) | [Quick Start](#quick-start) | [See Also](#see-also) | [Contributing](#contributing) | [License](#license) |
+## | [Prerequisites](#prerequisites) | [Quick Start](#quick-start) | [Build Native Image](#build-native-image) | [Native Image Test](#native-image-test) | [See Also](#see-also) | [Contributing](#contributing) | [License](#license) |
 
 ## Prerequisites
 
