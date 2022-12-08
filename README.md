@@ -48,6 +48,7 @@ I'm trying to take the `ARM64` support upstream to [Paketo](https://paketo.io), 
 
 ## See Also
 
+- [Spring Cloud Gateway 4.0.0-rc2 native example with Testcontainers](https://dashaun.com/posts/spring-cloud-gateway-4-0-0-rc2-native-example-with-testcontainers/)
 - [Cloud Native Buildpack for ARM64 and AMD64](https://dashaun.com/posts/java-native-builder-multiarch-7-41-0/)
 - [First attempt at a multi-architecture buildpack](https://dashaun.com/posts/multiarch-builder-poc/)
 - [K3s Knative Ubuntu Raspberry Pi](https://dashaun.com/posts/k3s-knative-ubuntu-raspberry-pi/)
