@@ -9,7 +9,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/setup-java@v2
@@ -22,4 +22,4 @@ jobs:
           submodules: true
       #Build Image
       - name: Build Image
-        run: ./mvnw -Pnative-amd64 spring-boot:build-image -DskipTests
+        run: ./gradlew bootBuildImage
