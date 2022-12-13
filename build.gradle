@@ -59,8 +59,9 @@ tasks.named('test') {
 }
 
 tasks.named("bootBuildImage") {
-    builder = "dashaun/java-native-builder-multiarch:7.41.0"
-    environment = ["BP_NATIVE_IMAGE": "true"]
+    builder = "dashaun/builder:tiny"
+    environment = ["BP_BINARY_COMPRESSION_METHOD": "upx",
+                   "BP_NATIVE_IMAGE"             : "true"]
     imageName = "dashaun/dev.dashaun.service.gateway:${project.version}"
 }
 
