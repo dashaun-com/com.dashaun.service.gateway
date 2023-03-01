@@ -28,3 +28,6 @@ workflows:
       - arm64-native:
           context:
             - dashaun-dockerhub
+          filters:
+            tags:
+              only: /^v.*/
