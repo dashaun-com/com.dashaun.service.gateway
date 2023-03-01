@@ -1,6 +1,7 @@
 version: 2.1
 
 orbs:
+  docker: circleci/docker@2.2.0
   sdkman: joshdholtz/sdkman@0.2.0
 
 jobs:
