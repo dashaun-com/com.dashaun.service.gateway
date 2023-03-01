@@ -1,5 +1,8 @@
 version: 2.1
 
+orbs:
+  sdkman: joshdholtz/sdkman@0.2.0
+
 jobs:
   arm64-native:
     machine:
@@ -7,6 +10,10 @@ jobs:
       resource_class: arm.medium
     steps:
       - checkout
+      - setup-sdkman
+      - sdkman-install:
+          candidate: java
+          version: 22.3.r17-grl
       - run:
           name: "Say hello"
           command: "./gradlew bootBuildImage"
