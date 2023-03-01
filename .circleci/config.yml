@@ -10,8 +10,8 @@ jobs:
       resource_class: arm.medium
     steps:
       - checkout
-      - setup-sdkman
-      - sdkman-install:
+      - sdkman/setup-sdkman
+      - sdkman/sdkman-install:
           candidate: java
           version: 22.3.r17-grl
       - run:
