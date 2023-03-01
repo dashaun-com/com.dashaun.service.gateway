@@ -1,0 +1,24 @@
+version: 2.1
+
+orbs:
+  sdkman: joshdholtz/sdkman@0.2.0
+
+jobs:
+  arm64-native:
+    machine:
+      image: ubuntu-2004:current
+      resource_class: arm.medium
+    steps:
+      - checkout
+      - sdkman/setup-sdkman
+      - sdkman/sdkman-install:
+          candidate: java
+          version: 22.3.r17-grl
+      - run:
+          name: "bootBuildImage"
+          command: "./gradlew bootBuildImage"
+
+workflows:
+  arm64-native-workflow:
+    jobs:
+      - arm64-native
