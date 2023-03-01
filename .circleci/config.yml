@@ -17,6 +17,8 @@ jobs:
       - run:
           name: "bootBuildImage"
           command: "./gradlew bootBuildImage"
+      - docker/push:
+          image: dashaun/dev.dashaun.service.gateway
 
 workflows:
   arm64-native-workflow:
