@@ -10,7 +10,7 @@ jobs:
       resource_class: arm.medium
     steps:
       - checkout
-      - setup-sdkman:
+      - setup-sdkman
       - sdkman-install:
           candidate: java
           version: 22.3.r17-grl
@@ -19,6 +19,6 @@ jobs:
           command: "./gradlew bootBuildImage"
 
 workflows:
-  arm64-native:
+  arm64-native-workflow:
     jobs:
       - arm64-native
