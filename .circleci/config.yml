@@ -20,6 +20,7 @@ jobs:
           command: "./gradlew bootBuildImage"
       - docker/push:
           image: dashaun/dev.dashaun.service.gateway
+          tag: $CIRCLE_TAG
 
 workflows:
   arm64-native-workflow:

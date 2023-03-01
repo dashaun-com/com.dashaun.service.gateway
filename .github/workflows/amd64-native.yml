@@ -31,4 +31,4 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       #Deploy the image to the Docker registry
       - name: Push Images to Docker Registry
-        run: docker images push -a dashaun/dev.dashaun.service.gateway
+        run: docker push -a dashaun/dev.dashaun.service.gateway
