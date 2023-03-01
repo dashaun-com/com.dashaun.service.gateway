@@ -4,6 +4,7 @@ plugins {
     id 'io.spring.dependency-management' version '1.1.0'
     id 'org.graalvm.buildtools.native' version '0.9.18'
     id 'com.palantir.git-version' version '0.15.0'
+    id "com.google.osdetector" version "1.7.3"
 }
 
 group = 'dev.dashaun.service.gateway'
@@ -60,8 +61,8 @@ tasks.named('test') {
 
 tasks.named("bootBuildImage") {
     builder = "dashaun/builder:tiny"
-    environment = ["BP_NATIVE_IMAGE"             : "true"]
-    imageName = "dashaun/dev.dashaun.service.gateway:${project.version}"
+    environment = ["BP_NATIVE_IMAGE"             : "false"]
+    imageName = "dashaun/dev.dashaun.service.gateway:${project.version}-${osdetector.arch}"
 }
 
 task integrationTest(type: Test) {
