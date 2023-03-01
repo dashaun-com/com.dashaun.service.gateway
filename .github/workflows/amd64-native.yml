@@ -32,3 +32,24 @@ jobs:
       #Deploy the image to the Docker registry
       - name: Push Images to Docker Registry
         run: docker push -a dashaun/dev.dashaun.service.gateway
+
+
+  manifest:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Login to DockerHub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: create-manifest
+        run: |
+          docker manifest create dashaun/dev.dashaun.service.gateway:$GITHUB_REF_NAME --amend dashaun/dev.dashaun.service.gateway:$GITHUB_REF_NAME-x86_64 --amend dashaun/dev.dashaun.service.gateway:$GITHUB_REF_NAME-
+          docker manifest push dashaun/builder:tiny
+          docker manifest create dashaun/builder:$(date +%Y%m%d) --amend dashaun/builder-arm:tiny --amend paketobuildpacks/builder:tiny
+          docker manifest push dashaun/builder:$(date +%Y%m%d)
+          docker manifest create dashaun/builder-multiarch:latest --amend dashaun/builder-arm:tiny --amend paketobuildpacks/builder:tiny
+          docker manifest push dashaun/builder-multiarch:latest
+          docker manifest create dashaun/builder-multiarch:tiny --amend dashaun/builder-arm:tiny --amend paketobuildpacks/builder:tiny
+          docker manifest push dashaun/builder-multiarch:tiny
