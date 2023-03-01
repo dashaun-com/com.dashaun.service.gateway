@@ -56,6 +56,11 @@ I'm trying to take the `ARM64` support upstream to [Paketo](https://paketo.io), 
 <!-- CONTRIBUTING -->
 ## Contributing
 
+### Release
+
+- git tag v#.#.#
+- git push origin v#.#.#
+
 Pull-requests are welcomed!
 
 <!-- LICENSE -->
