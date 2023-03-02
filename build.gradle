@@ -61,7 +61,7 @@ tasks.named('test') {
 
 tasks.named("bootBuildImage") {
     builder = "dashaun/builder:tiny"
-    environment = ["BP_NATIVE_IMAGE"             : "false"]
+    environment = ["BP_NATIVE_IMAGE": "true"]
     imageName = "dashaun/dev.dashaun.service.gateway:${project.version}-${osdetector.arch}"
 }
 
