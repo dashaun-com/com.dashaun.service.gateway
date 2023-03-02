@@ -18,6 +18,9 @@ jobs:
       - run:
           name: "bootBuildImage"
           command: "./gradlew bootBuildImage"
+      - docker/check:
+          docker-username: DOCKER_LOGIN
+          docker-password: DOCKERHUB_PASSWORD    
       - docker/push:
           image: dashaun/dev.dashaun.service.gateway
           tag: $CIRCLE_TAG-aarch_64
