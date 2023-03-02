@@ -46,4 +46,6 @@ jobs:
       - name: create-manifest
         run: |
           docker manifest create dashaun/dev.dashaun.service.gateway:$GITHUB_REF_NAME --amend dashaun/dev.dashaun.service.gateway:$GITHUB_REF_NAME-x86_64 --amend dashaun/dev.dashaun.service.gateway:$GITHUB_REF_NAME-aarch_64
-          docker manifest push dashaun/dev.dashaun.service.gateay:$GITHUB_REF_NAME
+          docker manifest push dashaun/dev.dashaun.service.gateway:$GITHUB_REF_NAME
+          docker manifest create dashaun/dev.dashaun.service.gateway:latest --amend dashaun/dev.dashaun.service.gateway:$GITHUB_REF_NAME-x86_64 --amend dashaun/dev.dashaun.service.gateway:$GITHUB_REF_NAME-aarch_64
+          docker manifest push dashaun/dev.dashaun.service.gateway:latest
