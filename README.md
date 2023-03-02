@@ -6,6 +6,9 @@
 
 # Spring Cloud Gateway and GraalVM native image example
 
+[![arm64-native](https://circleci.com/gh/dashaun/dev.dashaun.service.gateway.svg?style=shield)](https://app.circleci.com/pipelines/github/dashaun/dev.dashaun.service.gateway) |
+[![amd64-native](https://github.com/dashaun/dev.dashaun.service.gateway/actions/workflows/amd64-native.yml/badge.svg)](https://github.com/dashaun/dev.dashaun.service.gateway/actions/workflows/amd64-native.yml)
+
 - [Spring Boot Gateway](https://spring.io/projects/spring-cloud-gateway)
 - [Spring Cloud 2022.0.0-RC2](https://spring.io/projects/spring-cloud)
 - [Spring Boot 3.0.0](https://spring.io/projects/spring-boot)
