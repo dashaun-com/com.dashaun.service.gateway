@@ -43,13 +43,14 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: create-manifest
+      - name: pull-arm64
         uses: nick-fields/retry@v2
         with:
           timeout_minutes: 5
           retry_wait_seconds: 60
           max_attempts: 6
           command: docker pull dashaun/dev.dashaun.service.gateway:$GITHUB_REF_NAME-aarch_64
+      - name: create-manifest    
         run: |
           docker manifest create dashaun/dev.dashaun.service.gateway:$GITHUB_REF_NAME --amend dashaun/dev.dashaun.service.gateway:$GITHUB_REF_NAME-x86_64 --amend dashaun/dev.dashaun.service.gateway:$GITHUB_REF_NAME-aarch_64
           docker manifest push dashaun/dev.dashaun.service.gateway:$GITHUB_REF_NAME
