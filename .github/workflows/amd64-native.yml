@@ -14,7 +14,7 @@ jobs:
       - uses: actions/setup-java@v2
         with:
           distribution: 'liberica' # See 'Supported distributions' for available options
-          java-version: '17'
+          java-version: '21'
       - name: Checkout master
         uses: actions/checkout@v3
         with:

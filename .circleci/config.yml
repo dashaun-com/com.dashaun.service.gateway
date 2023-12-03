@@ -14,7 +14,7 @@ jobs:
       - sdkman/setup-sdkman
       - sdkman/sdkman-install:
           candidate: java
-          version: 22.3.r17-grl
+          version: 21.0.1-graalce
       - run:
           name: "bootBuildImage"
           command: "./gradlew bootBuildImage"
